@@ -74,6 +74,11 @@ while Gameover is False:
         if Pattern1[0][2] == mark and Pattern1[1][1] == mark and Pattern1[2][0] == mark:  # /
             print("P1 Wins")
             Gameover = True
+        if "_" not in Pattern1[0]:
+            if "_" not in Pattern1[1]:
+                if "_" not in Pattern1[2]:
+                    print("DRAW!")
+                    Gameover = True
 
     if Gameover is True:
         break
@@ -135,6 +140,11 @@ while Gameover is False:
         if Pattern1[0][2] == mark and Pattern1[1][1] == mark and Pattern1[2][0] == mark:  # /
             print("P1 Wins")
             Gameover = True
+        if "_" not in Pattern1[0]:
+            if "_" not in Pattern1[1]:
+                if "_" not in Pattern1[2]:
+                    print("DRAW!")
+                    Gameover = True
 
     P2_finished = False
 
