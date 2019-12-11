@@ -1,14 +1,25 @@
+from __future__ import print_function
+
 Gameover = False
 P1_finished = False
 P2_finished = False
-Pattern1 = [["_", "_", "_"],
-            ["_", "_", "_"],
-            ["_", "_", "_"]]
+Pattern1 = [["▢ ", "▢ ", "▢ "],
+            ["▢ ", "▢ ", "▢ "],
+            ["▢ ", "▢ ", "▢ "]]
 
 mark = 0
 
-win_patter1 = ["X", "X", "X"] or ["O", "O", "O"]
+win_patter1 = ["✘ ", "✘ ", "✘ "] or ["⚪ ", "⚪ ", "⚪ "]
 
+
+def print_pattern():
+    finished = False
+    ps = 0
+    while finished is False:
+        print(*Pattern1[ps], sep='')
+        ps += 1
+        if ps == 3:
+            finished = True
 
 while Gameover is False:
 
@@ -35,18 +46,16 @@ while Gameover is False:
         markX = int(posX) - 1
         mark_pos = int(posX) * int(posY)
 
-        if Pattern1[int(markY)][int(markX)] == "X":
+        if Pattern1[int(markY)][int(markX)] == "✘ ":
             print("This spot is already filled!")
             continue
-        if Pattern1[int(markY)][int(markX)] == "O":
+        if Pattern1[int(markY)][int(markX)] == "⚪ ":
             print("This spot is already filled!")
             continue
 
-        mark = "X"
+        mark = "✘ "
         (Pattern1[markY][markX]) = mark
-        print(Pattern1[0])
-        print(Pattern1[1])
-        print(Pattern1[2])
+        print_pattern()
         P1_finished = True
 
         # Wins THIS GAME IS MADE BY HENRI RUBEN
@@ -74,9 +83,9 @@ while Gameover is False:
         if Pattern1[0][2] == mark and Pattern1[1][1] == mark and Pattern1[2][0] == mark:  # /
             print("P1 Wins")
             Gameover = True
-        if "_" not in Pattern1[0]:
-            if "_" not in Pattern1[1]:
-                if "_" not in Pattern1[2]:
+        if "▢ " not in Pattern1[0]:
+            if "▢ " not in Pattern1[1]:
+                if "▢ " not in Pattern1[2]:
                     print("DRAW!")
                     Gameover = True
 
@@ -101,18 +110,16 @@ while Gameover is False:
         markY = int(posY) - 1
         markX = int(posX) - 1
 
-        if Pattern1[int(markY)][int(markX)] == "O":
+        if Pattern1[int(markY)][int(markX)] == "⚪ ":
             print("This spot is already filled!")
             continue
-        if Pattern1[int(markY)][int(markX)] == "X":
+        if Pattern1[int(markY)][int(markX)] == "✘ ":
             print("This spot is already filled!")
             continue
 
-        mark = "O"
+        mark = "⚪ "
         (Pattern1[markY][markX]) = mark
-        print(Pattern1[0])
-        print(Pattern1[1])
-        print(Pattern1[2])
+        print_pattern()
         P2_finished = True
 
         # Wins THIS GAME IS MADE BY HENRI RUBEN
@@ -140,9 +147,9 @@ while Gameover is False:
         if Pattern1[0][2] == mark and Pattern1[1][1] == mark and Pattern1[2][0] == mark:  # /
             print("P1 Wins")
             Gameover = True
-        if "_" not in Pattern1[0]:
-            if "_" not in Pattern1[1]:
-                if "_" not in Pattern1[2]:
+        if "▢ " not in Pattern1[0]:
+            if "▢ " not in Pattern1[1]:
+                if "▢ " not in Pattern1[2]:
                     print("DRAW!")
                     Gameover = True
 
